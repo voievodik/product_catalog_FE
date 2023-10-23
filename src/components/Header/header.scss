@@ -12,6 +12,8 @@
 
     &-img {
       margin-right: 24px;
+      width: 80px;
+      height: 28px;
     }
   }
 
@@ -85,13 +87,18 @@
     background-image: url(../../assets/icons/shopping-bag-cart.svg);
   }
 
+  &--close {
+    background-image: url(../../assets/icons/close.svg);
+    display: none;
+  }
+
   &--menu {
     background-image: url(../../assets/icons/menu.svg);
     display: none;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1199px) {
   .header {
     height: 48px;
     padding-inline: 16px;
@@ -132,10 +139,23 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 639px) {
   .header {
+    position: relative;
+
     &__menu {
       display: none;
+      flex-direction: column;
+      gap: 16px;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background-color: #fff;
+      position: absolute;
+
+      &-link {
+        padding-bottom: 8px;
+      }
     }
   }
 
@@ -148,8 +168,7 @@
       display: none;
     }
 
-    &--menu {
-      background-image: url(../../assets/icons/menu.svg);
+    &--menu, &--close {
       display: block;
       margin-right: 0;
     }
@@ -160,4 +179,8 @@
   font-weight: 800;
   color: #0F0F11;
   border-color: #0F0F11;
+}
+
+.active-menu {
+  display: flex;
 }
